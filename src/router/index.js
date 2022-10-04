@@ -67,8 +67,17 @@ const router = createRouter({
   routes
 })
 
-router.beforeEach(()=>{
+router.beforeEach((from,to)=>{
   document.title='土木反馈后台管理'
+  if(from.fullPath=='/'&&to.fullPath=='/'){
+    //
+   }
+   else{
+   
+    if(localStorage.getItem('phone')==null){
+      router.push('/')
+    }
+   }
 })
 
 export default router

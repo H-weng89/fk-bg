@@ -38,10 +38,13 @@ import { message } from 'ant-design-vue'
             formData.append('account',values.account)
             formData.append('password',values.password)
             const result = await login(formData)
-             if(result.data.code==200){
+            if(result.data.msg=='Login success'){
               localStorage.setItem('phone',values.account)
               router.push('/main')
     
+             }
+             else{
+                message.info('请检查账号密码')
              }
         
         },
