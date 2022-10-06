@@ -32,7 +32,12 @@ const instance = axios.create({
     
     // 超出 2xx 范围的状态码都会触发该函数。
     // 对响应错误做点什么
-    message.destroy()
+    message.info('网络错误')
+    
+
+    setTimeout(()=>{
+      message.destroy()
+    },1000)
     return Promise.reject(error);
   });
 
