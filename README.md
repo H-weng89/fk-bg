@@ -27,6 +27,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 打包之后，进入服务器
 cd /home/node/static  fk-front fk-bg分别为前台和后台的打包文件，把打包好的文件替换进去
 cd /usr/local/nginx/conf 修改nginx.conf:
+```
     server {
         listen     80;
         listen [::]:80;
@@ -44,6 +45,7 @@ cd /usr/local/nginx/conf 修改nginx.conf:
            }
           
     }
+```
     运行以下命令
     cd /usr/local/nginx/sbin
     ./nginx -s stop
